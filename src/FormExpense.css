@@ -1,0 +1,56 @@
+.expense-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: Arial, sans-serif;
+  }
+  
+  .expense-form h1 {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .expense-form p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+  }
+  
+  .form-input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #007bff;
+  }
+  
+  .submit-btn {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    background-color: #000000;
+    color: white;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bolder;
+  }
+  
+  .submit-btn:hover {
+    background-color: white;
+    color: black;
+  }
