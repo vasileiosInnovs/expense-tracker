@@ -1,12 +1,13 @@
 import React from 'react';
+import './Table.css'
 
 function Table({ rows }){
     const newId = rows.map(row => ({
         id: crypto.randomUUID()
     })) 
-    console.log(newId) 
+   
     return (
-        <table>
+        <table className="table-container custom-table">
             <thead>
                 <tr>
                     <th>Expense</th>
@@ -14,7 +15,6 @@ function Table({ rows }){
                     <th>Category</th>
                     <th>Amount</th>
                     <th>Date</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>

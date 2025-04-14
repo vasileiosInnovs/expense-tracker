@@ -1,0 +1,45 @@
+.table-container {
+    overflow-x: auto;
+    margin: 40px auto;
+    max-width: 90%;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: inherit;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffdcc6;
+  }
+  
+  .custom-table thead {
+    background-color: black;
+    color:white;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .custom-table tbody tr:hover {
+    background-color: #fecaaa;
+  }
+  
+  @media (max-width: 600px) {
+    .custom-table th,
+    .custom-table td {
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .expense-form {
+      margin: 1.5rem;
+      padding: 1.5rem;
+    }
+  }
+  

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './FormExpense.css'
 
-function AddExpense() {
+function AddExpense({onSubmit}) {
     const [formData, setFormData] = useState({
         expense: "",
         description: "",
@@ -11,9 +11,27 @@ function AddExpense() {
 
     })
 
+    const [errors, setErrors] = useState("")
+
+    function validateForm() {
+        if(formData.expense && formData.description && formData.category && formData.amount && formData.date)
+            return true;
+        else {
+            let errorFields = [];
+            for(const [key, value] of Object.entries(formData)){
+                if(!value){
+                    errorFields.push(key)
+                }
+            }
+            setErrors(errorFields.join(", "));
+            return false;
+        }
+    }
+
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(formData)
+        if (validateForm()) return;
+        onSubmit(formData)
     }
 
     function handleChange(event) {
@@ -72,8 +90,8 @@ function AddExpense() {
                 onChange={handleChange}
                 className="form-input"
             />
-
-            <button type='submit' value='Add Expense' className="submit-btn">Submit</button>
+            {errors && <div className='error'>{`Please include: ${errors}`}</div>}
+            <button type='submit' value='Add Expense' className="submit-btn" onClick={handleSubmit}>Submit</button>
         </form>
     )
 }
