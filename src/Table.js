@@ -1,7 +1,8 @@
 import React, { useState, useMemo } from "react";
+import { FaTrash } from 'react-icons/fa';
 import './Table.css'
 
-function Table({ rows }) {
+function Table({ rows, deleteRow }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const rowsWithId = useMemo(() => {
@@ -36,6 +37,9 @@ function Table({ rows }) {
             <th>Category</th>
             <th>Amount</th>
             <th>Date</th>
+            <th>
+                <span style={{ color: "white" }}><FaTrash /></span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -46,6 +50,11 @@ function Table({ rows }) {
               <td>{row.category}</td>
               <td>{row.amount}</td>
               <td>{row.date}</td>
+              <td>
+                <span>
+                    <FaTrash />
+                </span>
+              </td>
             </tr>
           ))}
         </tbody>

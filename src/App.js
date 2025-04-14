@@ -12,6 +12,10 @@ function App() {
   function handleSubmit(newRows){
     setRows([...rows, newRows])
   }
+
+  function handleDeleteRow(targetId) {
+    setRows(rows.filter((_, id) => id !== targetId))
+  }
   
   return (
     <div className="App">
@@ -28,7 +32,10 @@ function App() {
         />
       </section>
       <section className='table-section'>
-        <Table rows={rows}/>
+        <Table 
+          rows={rows}
+          deleteRow={handleDeleteRow}
+        />
       </section>
       </main>
     </div>

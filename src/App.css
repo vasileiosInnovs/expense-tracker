@@ -47,14 +47,14 @@ body {
 
 .main-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 3rem;
 }
 
 .form-section,
 .table-section {
   background-color: #ffffff;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
   animation: fadeIn 0.5s ease-in;
@@ -75,6 +75,7 @@ body {
   .side-by-side {
     flex-direction: row;
     align-items: flex-start;
+    display: flex;
   }
 
   .form-section,
