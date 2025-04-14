@@ -5,17 +5,18 @@ import { useState } from 'react';
 
 function App() {
   const [rows, setRows] = useState([
-    {expense: "iPhone", description: "phone", category: "tech", amount: "133100", date: "03-02-2015"},
-    {expense: "farm", description: "a piece of land", category: "real estate", amount: "1500000", date: "03-02-2015"}
+    {expense: "iPhone", description: "phone", category: "tech", amount: "133100", date: "03-02-2015", id: "400i4"},
+    {expense: "farm", description: "a piece of land", category: "real estate", amount: "1500000", date: "03-02-2015", id: "93905"}
   ])
 
-  function handleSubmit(newRows){
-    setRows([...rows, newRows])
+  function handleSubmit(newRow){
+    setRows([...rows, { ...newRow, id: crypto.randomUUID() }])
   }
 
   function handleDeleteRow(targetId) {
-    setRows(rows.filter((_, id) => id !== targetId))
+    setRows(rows.filter((row) => row.id !== targetId));
   }
+  
   
   return (
     <div className="App">

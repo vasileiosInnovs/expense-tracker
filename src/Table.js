@@ -5,14 +5,7 @@ import './Table.css'
 function Table({ rows, deleteRow }) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const rowsWithId = useMemo(() => {
-    return rows.map((row) => ({
-      ...row,
-      id: crypto.randomUUID(),
-    }));
-  }, [rows]);
-
-  const filteredRows = rowsWithId.filter((row) =>
+ const filteredRows = rows.filter((row) =>
     Object.values(row)
       .join(" ")
       .toLowerCase()
@@ -52,7 +45,8 @@ function Table({ rows, deleteRow }) {
               <td>{row.date}</td>
               <td>
                 <span>
-                    <FaTrash />
+                    <FaTrash onClick={() => deleteRow(row.id)}
+                    style={{ cursor: "pointer", color: "red" }}/>
                 </span>
               </td>
             </tr>

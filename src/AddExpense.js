@@ -11,26 +11,19 @@ function AddExpense({onSubmit}) {
 
     })
 
-    const [errors, setErrors] = useState("")
+   const [errors, setErrors] = useState("")
 
-    function validateForm() {
-        if(formData.expense && formData.description && formData.category && formData.amount && formData.date)
-            return true;
-        else {
-            let errorFields = [];
-            for(const [key, value] of Object.entries(formData)){
-                if(!value){
-                    errorFields.push(key)
-                }
-            }
-            setErrors(errorFields.join(", "));
-            return false;
-        }
+    /* function validateForm() {
+    if(formData.expense && formData.description && formData.category && formData.amount && formData.date)
+        return true;
+    else {
+        return false;
     }
+    }  */
 
     function handleSubmit(event) {
         event.preventDefault();
-        if (validateForm()) return;
+       /*  if (validateForm()) return; */
         onSubmit(formData)
     }
 
