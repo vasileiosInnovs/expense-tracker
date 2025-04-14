@@ -11,7 +11,7 @@ function AddExpense({onSubmit}) {
 
     })
 
-   const [errors, setErrors] = useState("")
+   /* const [errors, setErrors] = useState("") */
 
     /* function validateForm() {
     if(formData.expense && formData.description && formData.category && formData.amount && formData.date)
@@ -83,7 +83,7 @@ function AddExpense({onSubmit}) {
                 onChange={handleChange}
                 className="form-input"
             />
-            {errors && <div className='error'>{`Please include: ${errors}`}</div>}
+            {/* {errors && <div className='error'>{`Please include: ${errors}`}</div>} */}
             <button type='submit' value='Add Expense' className="submit-btn" onClick={handleSubmit}>Submit</button>
         </form>
     )

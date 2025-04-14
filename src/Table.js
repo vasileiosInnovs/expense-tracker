@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { FaTrash } from 'react-icons/fa';
 import './Table.css'
 
